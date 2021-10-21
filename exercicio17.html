@@ -1,0 +1,79 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Exercício 17</title>
+
+    <script language="javascript">
+        function calcula_tabuada() {
+            var form = document.getElementById("formulario");
+            var n = form.numero.value;
+            var table = document.getElementById("tabela");
+
+            if (n.match(/^[0-9]+$/)) {
+                var n = parseInt(n);
+                var resultado = 0;
+                tabuada = "";
+                for (operando = 10; operando > 0; operando--) {
+                    resultado = n * operando;
+                    var row = table.insertRow(1);
+                    var cell1 = row.insertCell(0);
+                    var cell2 = row.insertCell(1);
+                    var cell3 = row.insertCell(2);
+                    cell1.innerHTML = n;;
+                    cell2.innerHTML = operando;;
+                    cell3.innerHTML = resultado;;
+                }
+                table.style.solid = "block";
+            } else {
+                alert("Número válido.");
+            }
+
+
+        }
+    </script>
+</head>
+
+<body bgcolor="MistyRose">
+
+    <h1 align="center">Exercicío 17 </h1><br>
+    <center>
+        <table border="1" width="500" height="200" bgcolor="E0FFFF">
+
+            <tr>
+                <td align="center">
+
+                    <h2>Tabuada de um número positivo de 1 a 10</h2>
+                </td align="center">
+            </tr>
+            <tr>
+                <td align="center">
+                    <form id="formulario">
+                        <h3>Cálculo da tabuada:</h3>
+                        <p>
+                            <label for="numero">Digite o número:<br> </label>
+                            <input type="text" id="numero" name="numero" value="" />
+                        </p>
+                        <p>
+
+                            <input type="button" value="Calcular" onclick="return calcula_tabuada();" />
+                        </p>
+                    </form>
+
+                    <table border="1" id="tabela">
+                        <thead>
+                            <tr>
+                                <td>Nº</td>
+                                <td>Multiplicando</td>
+                                <td>Resultado</td>
+                            </tr>
+                        </thead>
+                    </table>
+                    <br>
+                </td align="center">
+            </tr>
+        </table>
+    </center>
+</body>
+
+</html>

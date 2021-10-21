@@ -1,0 +1,84 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Exercício 13</title>
+
+    <script language="javascript">
+        function calcular() {
+
+            var n1 = parseFloat(document.getElementById("n1").value);
+            var n2 = parseFloat(document.getElementById("n2").value);
+            var n3 = parseFloat(document.getElementById("n3").value);
+
+            var calculo = eval(n1 + n2 + n3);
+
+            if (!isNaN(calculo)) {
+                (calculo);
+            }
+            if (n2 + n3 > n1 &&
+                n1 + n3 > n2 &&
+                n1 + n2 > n3) {
+                ("Essa medidas podem formar");
+
+                if (n1 == n2 && n2 == n3) {
+                    alert("O triângulo é equilátero");
+
+                } else if (n1 == n2 || n2 == n3 || n1 == n3) {
+                    alert("O triângulo é isósceles ");
+                } else {
+                    alert("O triângulo é escaleno ");
+                }
+            } else {
+                alert("Essas medidas não podem formar um triângulo");
+            }
+        }
+
+        function limpar() {
+            var f = document.getElementById("formulario");
+            var n1 = f.n1;
+            var n2 = f.n2;
+            var n3 = f.n3;
+            n1.value = "";
+            n2.value = "";
+            n3.value = "";
+
+        }
+    </script>
+</head>
+
+<body bgcolor="MistyRose">
+
+    <h1 align="center">Exercicío 13 </h1><br>
+    <center>
+        <table border="1" width="500" height="200" bgcolor="E0FFFF">
+
+            <tr>
+                <td align="center">
+
+                    <h2>Verificação se valores formam triângulo e classificação </h2>
+                </td align="center">
+            </tr>
+            <tr>
+                <td align="center">
+                    <form id="formulario"><br>
+                        <span><h4> 1º equilátero &nbsp;  &nbsp; 2º isósceles  &nbsp;  &nbsp; 3º escaleno</h4></span>
+                        <br><img src="equilatero.jpg" width=100 height=80 />
+                        <img src="isosceles.png" width=100 height=80 />
+                        <img src="escaleno.png" width=100 height=80 /> <br>
+                        <span><h2> Coloque os números:</h2></span><br>
+                        <input type="text" size="10" id="n1" placeholder="n1"><br><br>
+                        <input type="text" size="10" id="n2" placeholder="n2"><br><br>
+                        <input type="text" size="10" id="n3" placeholder="n3"><br><br>
+                        <input type="button" value="  Limpar  " onClick="limpar()" />
+                        <input type="button" value=" Enviar " onClick="calcular(this)">
+                        <br><br>
+
+                    </form>
+                </td align="center">
+            </tr>
+        </table>
+    </center>
+</body>
+
+</html>

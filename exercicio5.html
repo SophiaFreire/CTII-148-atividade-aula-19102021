@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Exercício 5</title>
+
+    <script language="javascript">
+        function calcular(e) {
+
+            var operacao = e.value;
+
+            var n1 = parseFloat(document.getElementById("n1").value);
+            var n2 = parseFloat(document.getElementById("n2").value);
+            var n3 = parseFloat(document.getElementById("n3").value);
+            var n4 = parseFloat(document.getElementById("n4").value);
+            var calculo = eval(n1 + n2 + n3 + n4 + operacao + 4);
+
+            if (!isNaN(calculo)) {
+                alert(calculo);
+            }
+
+        }
+
+        function limpar() {
+            var f = document.getElementById("formulario");
+            var n1 = f.n1;
+            var n2 = f.n2;
+            var n3 = f.n3;
+            var n4 = f.n4;
+            n1.value = "";
+            n2.value = "";
+            n3.value = "";
+            n4.value = "";
+        }
+    </script>
+</head>
+
+<body bgcolor="MistyRose">
+    <h1 align="center">Exercicío 5 </h1><br>
+    <center>
+        <table border="1" width="500" height="200" bgcolor="E0FFFF">
+            <tr>
+                <td align="center">
+                    <h2>Média aritmética de quatro valores </h2>
+                </td align="center">
+            </tr>
+            <tr>
+                <td align="center">
+                    <form id="formulario">
+                        <span><h2> Coloque os números:</h2></span><br>
+                        <input type="text" size="10" id="n1" placeholder="n1"><br><br>
+                        <input type="text" size="10" id="n2" placeholder="n2"><br><br>
+                        <input type="text" size="10" id="n3" placeholder="n3"><br><br>
+                        <input type="text" size="10" id="n4" placeholder="n4"><br><br>
+                        <input type="button" value="  Limpar  " onClick="limpar()" />
+                        <input type="button" value=" / " onClick="calcular(this)">
+                        <br><br>
+                    </form>
+                </td align="center">
+            </tr>
+        </table>
+    </center>
+</body>
+
+</html>
